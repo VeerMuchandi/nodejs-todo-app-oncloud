@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodetodo-external
+spec:
+  type: LoadBalancer
+  selector:
+    app: nodetodo
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
